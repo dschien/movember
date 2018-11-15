@@ -23,7 +23,7 @@ public class MainController {
     }
 
     @GetMapping("/beard")
-    public String showContactForm(Beard beard, Model model) {
+    public String showBeardForm(Beard beard, Model model) {
         model.addAttribute("beards", beardRepository.findAll());
         return "beard";
     }
