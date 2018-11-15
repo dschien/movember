@@ -4,7 +4,8 @@
 
 ### Spring MVC
 
-#### Basic Controller  
+#### [Basic Controller](https://github.com/dschien/movember/blob/8dd3ab69ba61b8033a8e3867d3c1500f5f182dbb/src/main/java/ac/uk/bris/cs/spe/tutorial/movember/MainController.java#L21)  
+
 ```java
     @GetMapping("/")
     public String index() {
@@ -14,7 +15,8 @@
 ```
 
 This most simple controller just serves the name of a static template without any dynamic content. FYI - there is a shortcut 
-via the `ViewControllerRegistry` method :
+via [the `ViewControllerRegistry` method](https://github.com/dschien/santas-grotto/blob/6db6c1418f6433ec0bca0106c09ec8b5c3b27c90/src/main/java/ac/uk/bristol/cs/santa/grotto/controllers/WebController.java#L56) :
+
 ```java
 public void addViewControllers(ViewControllerRegistry registry) {
 //        registry.addViewController("/contact");
@@ -22,7 +24,7 @@ public void addViewControllers(ViewControllerRegistry registry) {
 ```  
 
 #### A Level-Up Controller - 
-Moving on, we want to have controller serves a template that show dynamic content, i.e. things that change. In our case
+Moving on, we want to have [controller serves a template that](https://github.com/dschien/movember/blob/8dd3ab69ba61b8033a8e3867d3c1500f5f182dbb/src/main/java/ac/uk/bris/cs/spe/tutorial/movember/MainController.java#L26) show dynamic content, i.e. things that change. In our case
 the list of beards we have stored in DB:
 ```java
 @GetMapping("/beard")
@@ -50,7 +52,7 @@ This is basically
 </body>
 ```
 
-Here is said template in full glory. 
+[Here is said template](https://github.com/dschien/movember/blob/master/src/main/resources/templates/beard.html) in full glory. 
 ```html
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
