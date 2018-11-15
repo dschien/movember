@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movember Beard Names</title>
+    <style>
+        .text-success   {color: #006400;}
+        .help-block    {color: #FF4500;}
+    </style>
+</head>
+<body>
+
+
+<div>
+
+    <h1>Known Beards</h1>
+
+    <table class="table">
+        <thead>
+        <td>Id</td>
+        <td>Name</td>
+
+        </thead>
+        <tr th:each="beard: ${beards}">
+            <td><span th:text="${beard.id}"/></td>
+            <td><span th:text="${beard.name}"/></td>
+        </tr>
+    </table>
+
+    <h1>Add your beard name.</h1>
+    <form th:action="@{/beard}" th:object="${beard}" method="post" class="form">
+        <p th:text="${message}" class="text-success"></p>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name"/>
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="help-block"></span>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<a href="/">Back home</a>
+</body>
+</html>
